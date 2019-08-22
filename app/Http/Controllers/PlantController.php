@@ -9,7 +9,8 @@ class PlantController extends Controller
 {
     public function show(int $id)
     {
-        return view('plants.single');
+        $plant = Plant::with('category')->where('id', $id)->get();
+        return view('plants.single', ['plant' => $plant]);
     }
 
     public function category($categoryId)
