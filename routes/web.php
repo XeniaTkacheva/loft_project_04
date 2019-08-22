@@ -11,12 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('main');
-});
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/plant/show', 'PlantController@show')->name('plant.show');
-Route::get('/plant/buy', 'PlantController@buy')->name('plant.buy');
+Route::get('/plant/show/{id}', 'PlantController@show')->name('plant.show');
+Route::get('/plant/buy/{id}', 'PlantController@buy')->name('plant.buy');
+Route::get('/plant/category/{id}', 'PlantController@category')->name('plant.category');

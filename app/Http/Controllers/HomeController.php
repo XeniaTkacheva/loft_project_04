@@ -25,8 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
         $plants = Plant::all();
-        return view('main', ['plants' => $plants, 'categories' => $categories] );
+        return view('main', ['plants' => $plants] );
     }
 }
