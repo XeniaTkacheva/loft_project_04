@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
+use App\Plant;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('main');
+        $categories = Category::all();
+        $plants = Plant::all();
+        return view('main', ['plants' => $plants, 'categories' => $categories] );
     }
 }
