@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $plants = Plant::all();
+        $plants = Plant::query()->limit(9)->orderByDesc('id')->get();
         return view('main', ['plants' => $plants] );
     }
 }

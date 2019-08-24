@@ -2,7 +2,6 @@
 
 namespace App;
 
-use Hamcrest\Thingy;
 use Illuminate\Database\Eloquent\Model;
 
 class Plant extends Model
