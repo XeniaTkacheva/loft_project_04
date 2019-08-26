@@ -38,6 +38,14 @@ class ViewServiceProvider extends ServiceProvider
             $plantRand = Plant::query()->find($idRand);
             $view->with(['plantRand' => $plantRand]);
         });
+        View::composer('layouts.content-bottom', function ($view) {
+            $plants = Plant::query()->limit(3)->orderByDesc('id')->get();
+            $view->with(['plants' => $plants]);
+        });
+
+
+
+
 
     }
 }

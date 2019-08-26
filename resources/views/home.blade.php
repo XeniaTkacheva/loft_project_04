@@ -19,7 +19,11 @@
         </div>
         <div class="main-content">
             <div class="content-top">
-                <div class="content-top__text">Купить игры неборого без регистрации смс с торента, получить компкт диск, скачать Steam игры после оплаты</div>
+                <div class="content-top__text">
+                    <h3>Roseraie Thérèse Meyer Estavayer-Le-Lac / Schweiz </h3>
+                    <p>Розарий Thérèse Meyer в городе Эставейе-ле-Лак / Швейцария на берегу Нёвшательского озера. <br>
+                        Съемки июнь 2019 года. Фотограф <b>Оксана Ткачева (Xenia Tkacheva)</b></p>
+                </div>
                 <div class="slider"><img src="/img/slider.png" alt="Image" class="image-main"></div>
             </div>
             @yield('content')

@@ -28,4 +28,9 @@ class HomeController extends Controller
         $plants = Plant::query()->limit(9)->orderByDesc('id')->get();
         return view('main', ['plants' => $plants] );
     }
+
+    public function about()
+    {
+        return view('about');
+    }
 }

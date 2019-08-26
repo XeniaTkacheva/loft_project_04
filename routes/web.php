@@ -21,3 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/plant/show/{id}', 'PlantController@show')->name('plant.show');
 Route::get('/plant/buy/{id}', 'PlantController@buy')->name('plant.buy');
 Route::get('/plant/category/{id}', 'PlantController@category')->name('plant.category');
+Route::get('/about', 'HomeController@about')->name('about');

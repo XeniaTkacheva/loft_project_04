@@ -1120,3 +1120,8 @@ a img.aligncenter {
   width: 130%;
   background-color: #d0e26c;
   z-index: -5; }
+.footer__link {
+    color: #166415;
+    text-decoration: none;
+    font-weight: bold;
+}
