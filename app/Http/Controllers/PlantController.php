@@ -10,8 +10,7 @@ class PlantController extends Controller
     public function show(int $id)
     {
         $plant = Plant::with('category')->where('id', $id)->get()->first();
-        $plants = $plants = Plant::query()->limit(3)->orderByDesc('id')->get();
-        return view('plants.single', ['plant' => $plant, 'plants' => $plants]);
+        return view('plants.single', ['plant' => $plant]);
     }
 
     public function category($categoryId)
