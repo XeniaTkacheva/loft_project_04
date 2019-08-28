@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
+use App\Cart;
 use App\Category;
 use App\Plant;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -41,6 +43,10 @@ class ViewServiceProvider extends ServiceProvider
         View::composer('layouts.content-bottom', function ($view) {
             $plants = Plant::query()->limit(3)->orderByDesc('id')->get();
             $view->with(['plants' => $plants]);
+        });
+        View::composer('layouts.header', function ($view) {
+            $cartCount = Cart::query()->where('user_id', Auth::id())->count();
+            $view->with(['cartCount' => $cartCount]);
         });
 
 

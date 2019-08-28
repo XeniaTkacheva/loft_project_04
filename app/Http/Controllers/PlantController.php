@@ -33,5 +33,4 @@ class PlantController extends Controller
         $cart->save();
         return redirect()->route('cart.list');
     }
-
 }

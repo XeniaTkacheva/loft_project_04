@@ -423,6 +423,16 @@ img {
   color: #fff;
   background-color: #a28954; }
 
+.btn-red {
+    color: #fff;
+    padding: 0 3px;
+    text-align: left;
+    background-color: #c02013;}
+    .btn-red:hover, .btn-red:focus {
+    font-weight: normal;
+    background-color: #d0a44f;}
+
+
 /* content-text style */
 .content-text p {
   font-size: 1.071rem;
@@ -690,7 +700,8 @@ img {
   font-size: 15px;
   font-family: "PT_Sans", sans-serif;
   color: black;
-  line-height: 17px; }
+  line-height: 17px;
+    text-align: center;}
 
 .cart-product__item__cart-date__content {
   color: inherit; }
