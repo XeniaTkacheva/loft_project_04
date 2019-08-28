@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use App\Plant;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PlantController extends Controller
 {
@@ -19,5 +21,17 @@ class PlantController extends Controller
         return view('main', ['plants' => $plants]);
     }
 
+    public function buy($plantId)
+    {
+        $plant = Plant::query()->find($plantId);
+        if (!$plant) {
+            return redirect()->route('home');
+        }
+        $cart = new Cart();
+        $cart->plant_id = $plantId;
+        $cart->user_id = Auth::id();
+        $cart->save();
+        return redirect()->route('cart.list');
+    }
 
 }
