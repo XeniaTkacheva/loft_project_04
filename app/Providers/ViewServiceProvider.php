@@ -27,14 +27,14 @@ class ViewServiceProvider extends ServiceProvider
     public function boot()
     {
         // Using Closure based composers...
-        View::composer('layouts.categories', function ($view) {
+        View::composer('sidebar.categories', function ($view) {
             $categories = Category::all();
             $view->with(['categories' => $categories]);
         });
 
         View::composer('layouts.footer', function ($view) {
             $count = Plant::all()->count();
-            $idRand = rand(0, $count);
+            $idRand = rand(0, $count) ?? 0;
             $plantRand = Plant::query()->find($idRand);
             $view->with(['plantRand' => $plantRand]);
         });

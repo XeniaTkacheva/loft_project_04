@@ -18,4 +18,6 @@ class PlantController extends Controller
         $plants = Plant::query()->where('category_id', $categoryId)->get();
         return view('main', ['plants' => $plants]);
     }
+
+
 }

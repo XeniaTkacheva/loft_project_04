@@ -14,8 +14,8 @@
     @include('layouts.header')
     <div class="middle">
         <div class="sidebar">
-            @include('layouts.categories')
-            @include('layouts.news')
+            @include('sidebar.categories')
+            @include('sidebar.news')
         </div>
         <div class="main-content">
             <div class="content-top">
