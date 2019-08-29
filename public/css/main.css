@@ -355,7 +355,8 @@ img {
     font-family: "Bebas_Neue", sans-serif;
     color: black;
     line-height: 28px;
-    font-weight: bold; }
+    font-weight: bold;
+      text-decoration: none;}
 
 /* search */
 .search-container__form {
@@ -423,6 +424,10 @@ img {
   color: #fff;
   background-color: #a28954; }
 
+.btn-brownad {
+  color: #fff;
+  background-color: #b98426; }
+
 .btn-red {
     color: #fff;
     padding: 0 3px;
@@ -431,6 +436,13 @@ img {
     .btn-red:hover, .btn-red:focus {
     font-weight: normal;
     background-color: #d0a44f;}
+
+.btn-redad {
+    background-color: #c02013;}
+    .btn-redad:hover, .btn-redad:focus {
+    font-weight: bold;
+    background-color: #cf6c7e;}
+
 
 
 /* content-text style */
@@ -889,6 +901,69 @@ img {
   padding: 20px 0 5px; }
 
 .news-list__item__content__news-btn-wrap {
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+  text-align: right; }
+
+/**/
+/* Admin List News */
+.admin.news-list__item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-bottom: 20px; }
+
+.admin.news-list__item__thumbnail {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 200px;
+      -ms-flex: 0 0 200px;
+          flex: 0 0 200px;
+  width: 30px;
+  max-height: 150px;
+  overflow: hidden; }
+
+.admin.news-list__item__content {
+  padding-left: 40px;
+  max-width: 600px;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 600px;
+      -ms-flex: 0 0 600px;
+          flex: 0 0 600px; }
+
+.admin.news-list__item__content__news-title {
+  font-size: 21px;
+  font-family: "PT_Sans", sans-serif;
+  color: black;
+  font-weight: bold;
+  line-height: 24px;
+  padding: 0 0 5px; }
+
+.admin.news-list__item__content__news-date {
+  font-size: 14px;
+  font-family: "PT_Sans", sans-serif;
+  color: black;
+  line-height: 16px;
+  border-bottom: 1px solid #bad6d3;
+  padding: 5px 0 5px; }
+
+.admin.news-list__item__content__news-content {
+  font-size: 13px;
+  font-family: "PT_Sans", sans-serif;
+  color: black;
+  font-weight: normal;
+  line-height: 16px;
+  padding: 10px 0 20px; }
+
+.admin.news-list__item__content__news-btn-wrap {
   -webkit-flex-basis: 100%;
       -ms-flex-preferred-size: 100%;
           flex-basis: 100%;
