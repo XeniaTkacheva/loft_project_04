@@ -27,7 +27,7 @@
                     <div class="cart-product__item__cart-date__content">{{$item->created_at}}</div>
                 </div>
                 <div class="cart-product__item__product-price"><span class="product-price__value">{{$item->plant->price}} рублей</span></div>
-                <div><a href="{{route('cart.delete', ['id' => $item->plant->id])}}" class="btn btn-red">Удалить</a></div>
+                <div><a href="{{route('cart.delete', ['id' => $item->id])}}" class="btn btn-red">Удалить</a></div>
             </div>
             @endforeach
 

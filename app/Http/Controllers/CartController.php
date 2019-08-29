@@ -13,9 +13,9 @@ class CartController extends Controller
         $cart = Cart::with('plant.category')->where('user_id', Auth::id())->get();
         return view('cart.list', ['cart' => $cart]);
     }
-    public function deleteItem($plantId)
+    public function deleteItem($cartId)
     {
-        Cart::where('plant_id', $plantId)->delete();
+        Cart::find($cartId)->delete();
         return redirect()->route('cart.list');
     }
 }
