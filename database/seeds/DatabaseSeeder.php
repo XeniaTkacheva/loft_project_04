@@ -1,5 +1,6 @@
 <?php
 
+use App\News;
 use App\Plant;
 use Illuminate\Database\Seeder;
 
@@ -12,6 +13,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        factory(Plant::class, 20)->create();
+        factory(News::class, 8)->create();
     }
 }

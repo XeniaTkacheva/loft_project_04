@@ -577,7 +577,7 @@ img {
 
 /* Image style */
 .img-news {
-  max-width: 300px; }
+  max-width: 400px; }
 
 .content-text__title {
   font-size: 1.857rem;
@@ -1135,4 +1135,7 @@ a img.aligncenter {
     color: #166415;
     text-decoration: none;
     font-weight: bold;
+}
+.news__flex {
+    display: flex;
 }

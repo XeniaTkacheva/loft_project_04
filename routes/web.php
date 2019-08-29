@@ -23,5 +23,6 @@ Route::get('/plant/buy/{id}', 'PlantController@buy')->name('plant.buy');
 Route::get('/plant/category/{id}', 'PlantController@category')->name('plant.category');
 Route::get('/cart', 'CartController@index')->name('cart.list');
 Route::get('/cart/delete/{id}', 'CartController@deleteItem')->name('cart.delete');
-Route::get('/news', 'HomeController@news')->name('news.list');
+Route::get('/news', 'NewsController@index')->name('news.list');
+Route::get('/news/show/{id}', 'NewsController@show')->name('news.show');
 Route::get('/about', 'HomeController@about')->name('about');

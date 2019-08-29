@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Cart;
 use App\Category;
+use App\News;
 use App\Plant;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\View;
@@ -47,6 +48,10 @@ class ViewServiceProvider extends ServiceProvider
         View::composer('layouts.header', function ($view) {
             $cartCount = Cart::query()->where('user_id', Auth::id())->count();
             $view->with(['cartCount' => $cartCount]);
+        });
+        View::composer('sidebar.news', function ($view) {
+            $lastNews = News::query()->limit(3)->orderByDesc('id')->get();
+            $view->with(['lastNews' => $lastNews]);
         });
 
 
