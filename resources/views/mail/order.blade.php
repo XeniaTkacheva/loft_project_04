@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="main-wrapper">
-        <h3>Поступил заказ {{}}</h3>
+        <h3>Поступил заказ </h3>
 
         @foreach($data as $item)
             <p>Номер заказа {{$item->id}}</p>

@@ -46,13 +46,15 @@ class CartController extends Controller
                 ];
             }
         OrderPlant::insert($data);
-        Cart::query()->where('user_id', $userId)->delete();
+
         $mailAttr = [
             'theme' => 'Получен заказ от пользователя ' . $userId,
-            'body' => view('mail.order', ['data' => $data])
+            'body' => 'Не знаю что в заказе, но отправить надо... Заказ № ' . $order->id
         ];
         $send = new OrderController;
         $send->sendOrderMail($mailAttr);
+
+        Cart::query()->where('user_id', $userId)->delete();
 
         return redirect()-> route('orders.list');
     }
