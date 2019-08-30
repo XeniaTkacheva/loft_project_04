@@ -5,7 +5,10 @@
     <div class="content-middle">
         <div class="content-head__container">
             <div class="content-head__title-wrap">
-                <div class="content-head__title-wrap__title bcg-title">Мои заказы</div>
+                <div class="content-head__title-wrap__title bcg-title">Корзина</div>
+            </div>
+            <div class="content-head__title-wrap">
+                <a href="{{route('orders.list')}}" class="content-head__title-wrap__title bcg-title">Мои заказы</a>
             </div>
             <div class="content-head__search-block">
                 <div class="search-container">
@@ -37,7 +40,7 @@
             </div>
         </div>
         <div class="content-footer__container">
-            <div class="btn-buy-wrap"><a href="#" class="btn-buy-wrap__btn-link">Перейти к оплате</a></div>
+            <div class="btn-buy-wrap"><a href="{{route('cart.order')}}" class="btn-buy-wrap__btn-link">Заказать</a></div>
         </div>
     </div>
 

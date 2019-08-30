@@ -16,6 +16,7 @@ class CreateOrderPlantsTable extends Migration
         Schema::create('order_plants', function (Blueprint $table) {
             $table->bigInteger('order_id');
             $table->bigInteger('plant_id');
+            $table->bigInteger('price');
             $table->timestamps();
         });
     }
