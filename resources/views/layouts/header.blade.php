@@ -21,6 +21,9 @@
         <div class="authorization-block">
             @if(\Auth::id())
                 Рады видеть Вас: {{Auth::user()->name}}
+                @if(\Auth::user()->is_admin === 1)
+                    <div><a href="{{route('news.list-admin')}}" class="btn btn-redad">АДМИН-ПАНЕЛЬ</a></div>
+                @endif
                 <div  aria-labelledby="navbarDropdown">
                     <a class="authorization-block__link " href="{{ route('logout') }}"
                        onclick="event.preventDefault();

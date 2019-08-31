@@ -32,6 +32,63 @@ class NewsController extends Controller
      */
     public function create()
     {
+        return view('news.create');
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param Request $request
+     * @return Response
+     */
+    public function store(Request $request)
+    {
+        $input = $request->all();
+
+        News::create($input);
+
+        $photo = $request->file('photo');
+        $lastId = News::query()->latest()->value('id');
+        $photoName =  '/img/news/photo-' . $lastId . '.' . $photo->getClientOriginalExtension();
+        News::query()->find($lastId)->update([
+            'photo' =>  $photoName
+        ]);
+        $photo->move(__DIR__ . '../../../../public/img/news', $photoName);
+
         return view('news.add');
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  News  $news
+     * @return Response
+     */
+    public function edit(News $news)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param Request $request
+     * @param  News  $news
+     * @return Response
+     */
+    public function update(Request $request, News $news)
+    {
+        //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  News  $news
+     * @return Response
+     */
+    public function destroy(News $news)
+    {
+        //
     }
 }

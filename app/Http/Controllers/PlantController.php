@@ -60,9 +60,19 @@ class PlantController extends Controller
      */
     public function create()
     {
-        //
+        return view('plants.create');
     }
 
+        public function fileUploadMove(Request $request)
+    {
+        $photo = $request->file('photo');
+
+        $destinationPath = '/img/cover';
+
+        $photoName = $photo->getClientOriginalName();
+        $upload_success = $photo->move($destinationPath, $photoName);
+        return $upload_success;
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -71,7 +81,19 @@ class PlantController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->all();
+
+        Plant::create($input);
+
+        $photo = $request->file('photo');
+        $lastId = Plant::query()->latest()->value('id');
+        $photoName =  '/img/cover/plant-' . $lastId . '.' . $photo->getClientOriginalExtension();
+        Plant::query()->find($lastId)->update([
+            'photo' =>  $photoName
+            ]);
+        $photo->move(__DIR__ . '../../../../public/img/cover', $photoName);
+
+        return view('plants.add');
     }
 
     /**

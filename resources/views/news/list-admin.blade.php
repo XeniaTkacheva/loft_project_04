@@ -7,7 +7,7 @@
                 <a href="#" class="content-head__title-wrap__title bcg-title">Новости</a>
             </div>
             <div>
-                <a href="{{route('news.add')}}" class="content-head__title-wrap__title bcg-title">&equiv; Добавить</a>
+                <a href="{{route('news.create')}}" class="content-head__title-wrap__title bcg-title">&equiv; Добавить</a>
             </div>
             <div class="content-head__search-block">
                 <div class="search-container">

@@ -52,7 +52,7 @@ class CartController extends Controller
             'body' => 'Не знаю что в заказе, но отправить надо... Заказ № ' . $order->id
         ];
         $send = new OrderController;
-        $send->sendOrderMail($mailAttr);
+//        $send->sendOrderMail($mailAttr);
 
         Cart::query()->where('user_id', $userId)->delete();
 

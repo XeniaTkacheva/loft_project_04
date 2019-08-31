@@ -26,25 +26,20 @@ class OrderController extends Controller
 
     public function sendOrderMail(array $mailAttr)
     {
-        // Create the Transport
         $transport = (new Swift_SmtpTransport('smtp.mail.ru', 465))
             ->setUsername('xenia1898@mail.ru')
             ->setPassword('Mail1968')
             ->setEncryption('ssl')
         ;
 
-// Create the Mailer using your created Transport
         $mailer = new Swift_Mailer($transport);
-
-// Create a message
 
         $message = (new Swift_Message($mailAttr['theme']))
             ->setFrom(['xenia1898@mail.ru' => 'Xenia Tkacheva'])
-            ->setTo(['laliiy@rambler.ru' => 'admin1', 'xenia189z@gmail.com' => 'Фвьшт_2'])
+            ->setTo(['laliiy@rambler.ru' => 'admin1', 'xenia189z@gmail.com' => 'Admin_2'])
             ->setBody($mailAttr['body'])
         ;
 
-// Send the message
         $result = $mailer->send($message);
         return $result;
     }

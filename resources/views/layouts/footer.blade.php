@@ -4,12 +4,21 @@
             <div class="random-product-container__head">Случайный товар</div>
             <div class="random-product-container__content">
                 <div class="item-product">
+                    @if (!empty($plantRand))
                     <div class="item-product__title-product"><a href="{{route('plant.show', ['id' => $plantRand->id])}}" class="item-product__title-product__link">{{$plantRand->title}}</a></div>
                     <div class="item-product__thumbnail"><a href="{{route('plant.show', ['id' => $plantRand->id])}}" class="item-product__thumbnail__link"><img src="{{$plantRand->photo}}" alt="Preview-image" class="item-product__thumbnail__link__img"></a></div>
                     <div class="item-product__description">
                         <div class="item-product__description__products-price"><span class="products-price">{{$plantRand->price}} руб</span></div>
-                        <div class="item-product__description__btn-block"><a href="{{route('plant.buy', ['id' => $plantRand->id])}}" class="btn btn-blue">Купить</a></div>
+                        <div class="item-product__description__btn-block"><a href="{{route('plant.buy', ['id' => 1])}}" class="btn btn-blue">Купить</a></div>
                     </div>
+                    @else
+                        <div class="item-product__title-product"><a href="{{route('plant.show', ['id' => 1])}}" class="item-product__title-product__link">Роза Aperiam.</a></div>
+                        <div class="item-product__thumbnail"><a href="{{route('plant.show', ['id' => 1])}}" class="item-product__thumbnail__link"><img src="/img/cover/plant-6.jpg" alt="Preview-image" class="item-product__thumbnail__link__img"></a></div>
+                        <div class="item-product__description">
+                            <div class="item-product__description__products-price"><span class="products-price">200 руб</span></div>
+                            <div class="item-product__description__btn-block"><a href="{{route('plant.buy', ['id' => 1])}}" class="btn btn-blue">Купить</a></div>
+                        </div>
+                    @endif
                 </div>
             </div>
         </div>

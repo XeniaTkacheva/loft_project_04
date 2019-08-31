@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="/css/libs.min.css">
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/media.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 <div class="main-wrapper">
     @include('layouts.header')
     <div class="middle">
         <div class="sidebar">
+            @include('sidebar.admin-menu')
             @include('sidebar.categories')
             @include('sidebar.news')
         </div>

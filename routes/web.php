@@ -35,7 +35,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function(){
     Route::get('/news', 'NewsController@newsList')->name('news.list-admin');
     Route::get('/news/edit/{id}', 'NewsController@edit')->name('news.edit');
     Route::get('/news/create', 'NewsController@create')->name('news.create');
-    Route::get('/news/add', 'NewsController@store')->name('news.add');
+    Route::post('/news/add', 'NewsController@store')->name('news.add');
+    Route::get('/plants/create', 'PlantController@create')->name('plants.create');
+    Route::post('/plants/add', 'PlantController@store')->name('plants.add');
 });
 
 Route::resource('plant', 'PlantController');
