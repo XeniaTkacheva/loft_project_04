@@ -53,9 +53,17 @@ class NewsController extends Controller
         News::query()->find($lastId)->update([
             'photo' =>  $photoName
         ]);
-        $photo->move(__DIR__ . '../../../../public/img/news', $photoName);
+        $photo->move(__DIR__ . '../../../../public/img/news', $photoName); // эта строка для локального компьютера Win10
+//        $photo->move('img/news', $photoName);  // эта строка для хостинга
 
-        return view('news.add');
+        return redirect('admin/news');
+    }
+
+    public function deleteNews(News $news)
+    {
+        $news->delete();
+
+        return redirect('admin/news');
     }
 
     /**

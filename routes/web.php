@@ -34,6 +34,7 @@ Route::get('/news/show/{id}', 'NewsController@show')->name('news.show');
 Route::group(['prefix' => 'admin', 'middleware' => 'admin'], function(){
     Route::get('/news', 'NewsController@newsList')->name('news.list-admin');
     Route::get('/news/edit/{id}', 'NewsController@edit')->name('news.edit');
+    Route::get('/news/delete/{news}', 'NewsController@deleteNews')->name('news.delete');
     Route::get('/news/create', 'NewsController@create')->name('news.create');
     Route::post('/news/add', 'NewsController@store')->name('news.add');
     Route::get('/plants/create', 'PlantController@create')->name('plants.create');

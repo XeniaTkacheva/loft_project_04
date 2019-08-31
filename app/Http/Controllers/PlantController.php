@@ -91,7 +91,8 @@ class PlantController extends Controller
         Plant::query()->find($lastId)->update([
             'photo' =>  $photoName
             ]);
-        $photo->move(__DIR__ . '../../../../public/img/cover', $photoName);
+        $photo->move(__DIR__ . '../../../../public/img/cover', $photoName); // эта строка для локального компьютера Win10
+//        $photo->move('img/news', $photoName);  // эта строка для хостинга
 
         return view('plants.add');
     }

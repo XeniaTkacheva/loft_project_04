@@ -29,8 +29,8 @@
                         <div class="news-list__item__content__news-content admin">{{substr($newsItem->text, 0, 200)}}...</div>
                         <div class="news-list__item__content__news-btn-wrap admin">
                             <a href="{{route('news.show', ['id' => $newsItem->id])}}" class="btn btn-brown">Читать полностью</a>
-                            <a href="{{route('news.show', ['id' => $newsItem->id])}}" class="btn btn-brownad">Изменить</a>
-                            <a href="{{route('news.show', ['id' => $newsItem->id])}}" class="btn btn-redad">Удалить</a>
+                            <a class="btn btn-brownad" title="Опция находится в разработке">Изменить</a>
+                            <a href="{{route('news.delete', ['id' => $newsItem->id])}}" class="btn btn-redad">Удалить</a>
                         </div>
                     </div>
 
